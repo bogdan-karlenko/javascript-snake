@@ -1,5 +1,5 @@
 define(["gamelogic", "drawing"], function(gamelogic, drawing) {
-	function Init() {
+	function Init(test) {
 		var settings = {
 			dotSize: 15, // size of square in px
 			boardWidth: 30,
@@ -14,7 +14,10 @@ define(["gamelogic", "drawing"], function(gamelogic, drawing) {
 		game.score = -1;
 		gamelogic.keyboard(game);
 
-		drawing(game.field, game.score);
+
+		if (!test) {
+			drawing(game.field, game.score);
+		}
 
 		game.score = 0;
 		game.randomFood();
@@ -29,21 +32,23 @@ define(["gamelogic", "drawing"], function(gamelogic, drawing) {
 						game.checkCollision();
 					} else {
 						game.keypressed = false;
-					};
+					}
 
 					game.putSnake();
-					if (game.playing) {
+					if (game.playing && !test) {
 						drawing(game.field, game.score);
-					};
+					}
+
 					game.keypressed = false;
 					if (speed !== game.snake.speed) {
 						clearInterval(timerID);
 						setTimer();
-					};
+					}
+
 					if (!game.playing) {
 						clearInterval(timerID);
-					};
-				};
+					}
+				}
 			}, game.snake.speed);
 		};
 	}

@@ -1,7 +1,13 @@
 define([], function() {
 
-	function draw(field, score) {
-		var main = document.getElementById("main-snake");
+	function draw(field, score, test) {
+		if (!test) {
+			var main = document.getElementById("main-snake");
+		} else {
+			var main = {
+				canvas: {}
+			};
+		}
 		var width = field.width;
 		var height = field.height;
 		var dotSize = field.dotSize;
@@ -25,12 +31,14 @@ define([], function() {
 			ctx.font = "12px Georgia bold";
 			ctx.fillStyle = "red";
 			ctx.fillText("Press Space", 2, 12);
-		}
+			return true;
+		};
 
 		function drawScore(ctx) {
 			ctx.font = "12px Georgia bold";
 			ctx.fillStyle = "red";
 			ctx.fillText("Score: " + score, 2, 12);
+			return true;
 		};
 
 		function drawGrid(ctx) {
@@ -49,6 +57,7 @@ define([], function() {
 				ctx.lineTo(width * dotSize, i * dotSize);
 			};
 			ctx.stroke();
+			return true;
 		};
 
 		function drawField(ctx) {
@@ -61,6 +70,7 @@ define([], function() {
 					roundRect(ctx, x * dotSize, y * dotSize, dotSize, dotSize, dotSize / 3, true, true);
 				}
 			}
+			return true;
 		};
 
 		//	function is drawing rectangle with rounded corners starting at (x,y)
@@ -108,6 +118,16 @@ define([], function() {
 			if (stroke) {
 				ctx.stroke();
 			}
+
+		};
+		
+		return {
+			done: true,
+			draw: draw,
+			drawPressSpace: drawPressSpace,
+			drawScore: drawScore,
+			drawGrid: drawGrid,
+			drawField: drawField,
 		};
 	};
 

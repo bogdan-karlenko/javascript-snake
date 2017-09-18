@@ -1,10 +1,11 @@
 require.config({
-	baseUrl: "scripts",
+	baseUrl: "js",
 	paths: {
 		"gamelogic": "gamelogic",
 		"drawing": "drawing",
 		"snake": "snake",
 		"field": "field",
+		"init": "init",
 	},
 });
 
