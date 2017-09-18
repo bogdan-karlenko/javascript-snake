@@ -1,7 +1,9 @@
 # javascript-snake
-Snake Game using JavaScript  
+Snake Game using JavaScript, RequireJS  
+Testing using Jasmine  
 
-Run game: https://bogdan-karlenko.github.io/javascript-snake/  
+Run game: https://bogdan-karlenko.github.io/javascript-snake/src/index.html
+Run tests: https://bogdan-karlenko.github.io/javascript-snake/test/SpecRunner.html   
 
 Based on:   
 https://github.com/patorjk/JavaScript-Snake  
