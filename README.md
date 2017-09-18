@@ -2,7 +2,7 @@
 Snake Game using JavaScript, RequireJS  
 Testing using Jasmine  
 
-Run game: https://bogdan-karlenko.github.io/javascript-snake/src/index.html
+Run game: https://bogdan-karlenko.github.io/javascript-snake/src/index.html  
 Run tests: https://bogdan-karlenko.github.io/javascript-snake/test/SpecRunner.html   
 
 Based on:   
